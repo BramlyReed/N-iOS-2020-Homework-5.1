@@ -54,8 +54,8 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: MyTableViewCellDelegate{
     func pushNewScreen(){
-        guard let VC = storyboard?.instantiateViewController(identifier: "pushedController") as? VC else { return }
-        present(VC, animated: true)
+        let controller = self.storyboard!.instantiateViewController(withIdentifier: "pushedController")
+        self.navigationController!.pushViewController(controller, animated: true)
     }
 }
 class CustomHeader: UITableViewHeaderFooterView {
